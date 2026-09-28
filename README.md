@@ -4,6 +4,8 @@
 
 Personal icon set for Home Assistant, installable via HACS. Currently <!--count-->37<!--/count--> icons.
 
+![Overzicht van alle iconen](https://raw.githubusercontent.com/LeonCB/leons-ha-icons/main/docs/preview.png)
+
 ## Installation
 
 ### HACS
@@ -31,7 +33,7 @@ Icons live in `src/icons.json` (name → SVG `d` path, 24x24 viewBox). `dist/leo
 npm run build
 ```
 
-The build also updates the icon count at the top of this README (the version badge follows the latest GitHub release automatically). Commit the updated `dist/` and `README.md` together with your change. To release: bump `version` in `package.json`, build, commit, tag (`git tag <version>`) and publish a GitHub release; HACS then offers it as a version.
+The build also updates the icon count at the top of this README (the version badge follows the latest GitHub release automatically). `docs/preview.png` is a static overview; regenerate it when you add icons. Commit the updated `dist/` and `README.md` together with your change. To release: bump `version` in `package.json`, build, commit, tag (`git tag <version>`) and publish a GitHub release; HACS then offers it as a version.
 
 ### License
 

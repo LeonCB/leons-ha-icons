@@ -6,17 +6,19 @@ on:
     - cron: "0 0 * * 1"
 jobs:
   hacs:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: hacs/action@main
         with:
           category: plugin
+          # GitHub cannot detect CC BY-NC-SA 4.0 as an SPDX license; only matters for the default HACS store
+          ignore: license
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
           node-version: 22
       - run: npm run build
