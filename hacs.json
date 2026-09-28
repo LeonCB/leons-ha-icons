@@ -1,5 +1,6 @@
 {
-    "name": "Leons HA Icons",
-    "render_readme": true,
-    "content_in_root": false
+  "name": "Leons HA Icons",
+  "filename": "leons-ha-icons.js",
+  "render_readme": true,
+  "content_in_root": false
 }

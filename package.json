@@ -1,0 +1,11 @@
+{
+  "name": "leons-ha-icons",
+  "version": "2026.9.1",
+  "description": "Custom icon set for Home Assistant (prefix: leon:)",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs"
+  },
+  "license": "CC-BY-NC-SA-4.0"
+}
