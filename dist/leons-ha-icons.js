@@ -135,7 +135,7 @@ window.customIcons = window.customIcons || {};
 window.customIcons[ICONSET_PREFIX] = { getIcon, getIconList };
 
 console.info(
-  "%c HASS-LEONS-ICONS         \n%c Version 2026.9.1 ",
+  "%c HASS-LEONS-ICONS         \n%c Version 2026.9.2 ",
   "color: orange; font-weight: bold; background: black",
   "color: white; font-weight: bold; background: dimgray"
 );
