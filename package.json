@@ -1,6 +1,6 @@
 {
   "name": "leons-ha-icons",
-  "version": "2026.9.4",
+  "version": "2026.10.1",
   "description": "Custom icon set for Home Assistant (prefix: leon:)",
   "private": true,
   "type": "module",
