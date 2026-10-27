@@ -2,7 +2,7 @@
 
 ![Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Frepos%2FLeonCB%2Fleons-ha-icons%2Freleases%2Flatest&query=%24.tag_name&label=version&color=blue)
 
-Personal icon set for Home Assistant, installable via HACS. Currently <!--count-->31<!--/count--> icons.
+Personal icon set for Home Assistant, installable via HACS. Currently <!--count-->32<!--/count--> icons.
 
 ![Overview of all icons](https://raw.githubusercontent.com/LeonCB/leons-ha-icons/main/docs/preview.png)
 
