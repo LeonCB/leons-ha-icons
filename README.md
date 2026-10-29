@@ -2,7 +2,7 @@
 
 ![Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Frepos%2FLeonCB%2Fleons-ha-icons%2Freleases%2Flatest&query=%24.tag_name&label=version&color=blue)
 
-Personal icon set for Home Assistant, installable via HACS. Currently <!--count-->33<!--/count--> icons.
+Personal icon set for Home Assistant, installable via HACS. Currently <!--count-->29<!--/count--> icons.
 
 ![Overview of all icons](https://raw.githubusercontent.com/LeonCB/leons-ha-icons/main/docs/preview.png)
 
@@ -48,24 +48,6 @@ The icons will also appear in the Home Assistant icon picker when you search for
 
 ## License
 
-MIT License
+The code and the original icons in this repository are released under the [MIT License](LICENSE).
 
-Copyright (c) 2026 LeonCB
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+Some icons are logos or trademarks of other projects and companies. They remain the property of their owners, are included only to identify the related product, and are **not** covered by this license. See [ATTRIBUTIONS.md](ATTRIBUTIONS.md) for the icon sources.
