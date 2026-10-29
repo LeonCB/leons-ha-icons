@@ -7,9 +7,13 @@ const { version } = JSON.parse(readFileSync(join(root, "package.json"), "utf8"))
 const icons = JSON.parse(readFileSync(join(root, "src/icons.json"), "utf8"));
 const loader = readFileSync(join(root, "src/loader.js"), "utf8");
 
-for (const [name, path] of Object.entries(icons)) {
+// An icon is either a path string or { path, secondaryPath } (duotone: the
+// secondary path is drawn by Home Assistant at reduced opacity).
+const isPath = (p) => typeof p === "string" && p.trim() !== "";
+for (const [name, icon] of Object.entries(icons)) {
   if (!/^[a-z0-9]+(-[a-z0-9]+)*$/.test(name)) throw new Error(`Invalid icon name: ${name}`);
-  if (typeof path !== "string" || !path.trim()) throw new Error(`Empty path: ${name}`);
+  const ok = isPath(icon) || (icon && isPath(icon.path) && (icon.secondaryPath === undefined || isPath(icon.secondaryPath)));
+  if (!ok) throw new Error(`Invalid or empty path: ${name}`);
 }
 
 const body = Object.entries(icons)

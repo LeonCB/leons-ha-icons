@@ -5,9 +5,10 @@ const ICONSET_PREFIX = "leon"; // usage in Home Assistant: leon:<icon-name>
 
 async function getIcon(name) {
   // Underscores are accepted for backwards compatibility with older configs.
-  const path = LEONS_ICONS_MAP[name.replace(/_/g, "-")];
-  if (!path) throw new Error(`Icon not found in ${ICONSET_PREFIX}: ${name}`);
-  return { path };
+  const icon = LEONS_ICONS_MAP[name.replace(/_/g, "-")];
+  if (!icon) throw new Error(`Icon not found in ${ICONSET_PREFIX}: ${name}`);
+  // Plain string = single path; object = { path, secondaryPath } (duotone).
+  return typeof icon === "string" ? { path: icon } : icon;
 }
 
 async function getIconList() {

@@ -88,6 +88,9 @@ const LEONS_ICONS_MAP = {
   "smart-watch":
     "M20.73 3.86h1.11c.71 0 .95.38 1.05 1 .02.74 0 2.64 0 3.5 0 .6-.13 1-1.05 1.01l-1.07.01v8.23c0 2.3-.02 2.85-.1 3.16A3.04 3.04 0 0 1 18.25 23H3.55a3 3 0 0 1-1.07-.18c-.94-.32-1.44-1.36-1.47-2.3-.03-1.09 0-2.17 0-3.25v-5.23l.01-7.34c0-.5-.04-1 .12-1.49a3.25 3.25 0 0 1 3.02-2.2C6.65 1 15.7 1 17.72 1.02a3.1 3.1 0 0 1 3.01 2.85ZM4.26 21.94c2.3-.03 4.61-.02 6.92-.02 2.3 0 4.61.04 6.92.01.17 0 1.65-.67 1.65-1.58v-3.2L19.69 4.3c0-1.3-.58-2.14-2.04-2.16-.62 0-11.45-.02-13.52 0-.37 0-.75.07-1.07.26-.64.37-.93 1.13-.94 1.83v7.88l.03 7.98a4 4 0 0 0 .15 1.05c.26.8 1.28.81 1.96.8ZM13 9.15c-.84 0-1.53.52-1.97.52-.47 0-1.08-.49-1.82-.49-1.4 0-2.81 1.16-2.81 3.34 0 1.35.52 2.78 1.17 3.7.56.79 1.04 1.43 1.74 1.43s1-.46 1.86-.46c.88 0 1.07.44 1.83.44.77 0 1.27-.69 1.75-1.38.53-.78.76-1.55.77-1.59-.05-.01-1.5-.6-1.5-2.26 0-1.44 1.14-2.08 1.2-2.14A2.64 2.64 0 0 0 13 9.16Zm.18-2.7a2.5 2.5 0 0 0-1.65.85 2.4 2.4 0 0 0-.62 1.51l.02.2.16.02c.5 0 1.14-.34 1.51-.8.35-.41.6-.99.6-1.56 0-.08 0-.16-.02-.22Zm8.67-1.04c0-.5.05-.49-.6-.49h-.48v3.35h.43c.59 0 .66-.02.65-.61V5.4Z",
 
+  "tailscale":
+    {"path":"M3 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6m9 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6m0 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6m9-9a3 3 0 1 0 0-6 3 3 0 0 0 0 6","secondaryPath":"M3 24a3 3 0 1 0 0-6 3 3 0 0 0 0 6m18 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6M3 6a3 3 0 1 0 0-6 3 3 0 0 0 0 6m9 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6m9 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6"},
+
   "televisie":
     "M21 3H3a2 2 0 0 0-2 2v12c0 1.1.9 2 2 2h5v2h8v-2h5a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2Zm0 14H3V5h18v12Zm-6.3-9.6-.9.9a3.5 3.5 0 0 1-1.8 6.5c-2 0-3.5-1.6-3.5-3.5 0-1.3.7-2.4 1.7-3l-.9-.9A4.7 4.7 0 0 0 12 16a4.7 4.7 0 0 0 2.7-8.6ZM12.6 6h-1.2v5.9h1.2V6Z",
 
@@ -105,9 +108,10 @@ const ICONSET_PREFIX = "leon"; // usage in Home Assistant: leon:<icon-name>
 
 async function getIcon(name) {
   // Underscores are accepted for backwards compatibility with older configs.
-  const path = LEONS_ICONS_MAP[name.replace(/_/g, "-")];
-  if (!path) throw new Error(`Icon not found in ${ICONSET_PREFIX}: ${name}`);
-  return { path };
+  const icon = LEONS_ICONS_MAP[name.replace(/_/g, "-")];
+  if (!icon) throw new Error(`Icon not found in ${ICONSET_PREFIX}: ${name}`);
+  // Plain string = single path; object = { path, secondaryPath } (duotone).
+  return typeof icon === "string" ? { path: icon } : icon;
 }
 
 async function getIconList() {
@@ -120,7 +124,7 @@ window.customIcons = window.customIcons || {};
 window.customIcons[ICONSET_PREFIX] = { getIcon, getIconList };
 
 console.info(
-  "%c HASS-LEONS-ICONS         \n%c Version 2026.10.3 ",
+  "%c HASS-LEONS-ICONS         \n%c Version 2026.10.4 ",
   "color: orange; font-weight: bold; background: black",
   "color: white; font-weight: bold; background: dimgray"
 );
